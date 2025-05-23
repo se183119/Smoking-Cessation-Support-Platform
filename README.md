@@ -93,10 +93,3 @@ The application follows a normalized relational schema with proper foreign keys 
 > SQL init script: [`/database/init_schema.sql`](./database/init_schema.sql)
 
 ---
-
-## 🚀 Setup Instructions
-
-### 1. Clone the project
-```bash
-git clone https://github.com/your-username/Smoking-Cessation-Support-Platform.git
-cd Smoking-Cessation-Support-Platform
