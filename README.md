@@ -1,5 +1,3 @@
-# Smoking-Cessation-Support-Platform
-
 # 🚭 Smoking Cessation Support Platform
 
 A full-stack web application that supports users on their journey to quit smoking. The platform provides personalized tracking, motivational tools, expert coaching, and community support to help users succeed.
