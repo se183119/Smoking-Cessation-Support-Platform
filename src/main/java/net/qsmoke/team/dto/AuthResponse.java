@@ -16,11 +16,18 @@ public class AuthResponse {
     public AuthResponse(String token) {
         this.token = token;
     }
-//    public String getToken() {
-//        return token;
-//    }
+    private String refreshToken;
     private String email;
     private String fullName;
+
+    public String getRefreshToken() {
+        return refreshToken;
+    }
+
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
     private Role role;
 
     public String getToken() {
