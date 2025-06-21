@@ -1,0 +1,24 @@
+# Ignore everything except the JAR file
+*
+!target/*.jar
+
+# Ignore version control files
+.git
+.gitignore
+
+# Ignore IDE/editor configs
+.idea
+.vscode
+*.iml
+
+# Ignore environment files
+.env
+
+# Ignore build tools
+.gradle
+.mvn
+build/
+
+# Logs and temp files
+*.log
+*.tmp

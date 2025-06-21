@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Subscription Activated</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            background-color: #f7f9fa;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ddd;
+        }
+        h2 {
+            color: #2a9d8f;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+        .highlight {
+            color: #264653;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>🎉 Welcome, <span th:text="${username}">User</span>!</h2>
+
+    <p>We're excited to let you know that your <strong>payment was successful</strong>.</p>
+
+    <p>Your <strong>membership subscription</strong> has now started and will be active from:</p>
+
+    <p>
+        <strong class="highlight">Start Date:</strong> <span th:text="${startDate}">2025-06-12</span><br/>
+        <strong class="highlight">End Date:</strong> <span th:text="${endDate}">2025-07-12</span>
+    </p>
+
+    <p>
+        <strong class="highlight">Amount Paid:</strong> $<span th:text="${amount}">9.99</span>
+    </p>
+
+    <p>Thank you for becoming a member! You now have access to all premium features and benefits.</p>
+
+    <p>If you have any questions or need support, feel free to contact us anytime.</p>
+
+    <div class="footer">
+        – The Your Company Team
+    </div>
+</div>
+</body>
+</html>

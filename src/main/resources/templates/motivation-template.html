@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Going - You're Doing Great!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            text-align: center;
+            color: white;
+        }
+
+        .header .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .header h1 {
+            margin: 0 0 10px 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .content {
+            padding: 40px 30px;
+        }
+
+        .greeting {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 500;
+        }
+
+        .message {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 20%, #4facfe 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 4s ease infinite;
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            font-size: 60px;
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-style: italic;
+            font-size: 17px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .encouragement {
+            background: #f8f9ff;
+            border-left: 4px solid #667eea;
+            padding: 20px 25px;
+            margin: 30px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 16px;
+            color: #444;
+            font-weight: 500;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        .footer-icon {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .unsubscribe {
+            color: #999;
+            text-decoration: none;
+            font-size: 12px;
+            margin-top: 15px;
+            display: inline-block;
+        }
+
+        .unsubscribe:hover {
+            color: #667eea;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .header, .content, .footer {
+                padding: 20px !important;
+            }
+
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header .icon {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="email-container">
+    <!-- Header -->
+    <div class="header">
+        <span class="icon">🌟</span>
+        <h1 th:text="${quote}">Keep Going, You're Doing Great!</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <div class="greeting">Hi Champion,</div>
+
+        <div class="message">
+            <p>We just wanted to remind you how far you've come and how capable you are of achieving your goals. Every step, no matter how small, brings you closer to your dreams.</p>
+        </div>
+
+        <!-- Encouragement -->
+        <div class="encouragement">
+            <p>Stay strong, stay focused, and never forget why you started. Your future self will thank you for not giving up today.</p>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="cta-section">
+            <a href="https://smokingcessation.website/" class="cta-button">Continue your Journey</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div class="footer-icon">💪</div>
+        <p>You're receiving this email because you're on a journey to better yourself.</p>
+        <p>We're here to cheer you on every step of the way!</p>
+        <p th:text="'Sent on: ' + ${#temporals.format(sendTime, 'yyyy-MM-dd HH:mm')}">Sent on: 2025-06-10 08:00</p>
+    </div>
+</div>
+</body>
+</html>
